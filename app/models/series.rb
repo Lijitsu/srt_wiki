@@ -7,7 +7,7 @@
 #  updated_at :datetime         not null
 #
 class Series < ApplicationRecord
-    has_many :games
+  has_many :games
 
   attr_accessor :name
 
