@@ -1,0 +1,12 @@
+<h1><%= @game.name %></h1>
+<p> <%= @game.platform %>
+<%= @game.overview %>
+<%= @game.release_date %>
+<%= @game.series %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_admin_game_path(@game) %></li>
+  <li><%= link_to "Destroy", admin_game_url(@game),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

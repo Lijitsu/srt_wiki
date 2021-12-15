@@ -21,11 +21,24 @@ class Admin::SeriesController < Admin::BaseController
     end
   end
 
+  def create
+    @series = Series.new(series_params)
+    if @series.save 
+      redirect_to [:admin, @series]
+    else
+      render :new
+    end
+  end
+
   def destroy
     @series = Series.find(params[:id])
     @series.destroy
 
     redirect_to root_path
+  end
+
+  def show
+    @series = Series.find (params[:id])
   end
 
   private

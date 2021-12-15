@@ -1,0 +1,8 @@
+<%= simple_form_for [:admin, game] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :platform %>
+  <%= f.input :overview %>
+  <%= f.input :release_date %>
+  <%= f.input :series, collection: Series.all %>
+  <%= f.submit %>
+<% end %>

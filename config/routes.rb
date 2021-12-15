@@ -8,15 +8,15 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-    resources :series, except: [:show]
-    resources :categories, except: [:show]
-    resources :games, except: [:show]
-    resources :levels, except: [:show]
-    resources :resources, except: [:show]
-    resources :skips, except: [:show]
-    resources :tricks, except: [:show]
-    resources :guides, except: [:show]
-    resources :game_tricks, except: [:show]
+    resources :series
+    resources :categories
+    resources :games
+    resources :levels
+    resources :resources
+    resources :skips
+    resources :tricks
+    resources :guides
+    resources :game_tricks
   end
 
 end

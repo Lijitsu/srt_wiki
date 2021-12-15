@@ -37,6 +37,10 @@ class Admin::CategoriesController < Admin::BaseController
     redirect_to root_path
   end
 
+  def show
+    @category = Category.find (params[:id])
+  end
+
   private
 
   def category_params

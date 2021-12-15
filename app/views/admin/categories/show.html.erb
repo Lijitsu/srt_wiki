@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+<p> <%= @category.platform %>
+<%= @category.overview %>
+<%= @category.game %>
+<%= @category.rules %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_admin_category_path(@category) %></li>
+  <li><%= link_to "Destroy", admin_category_url(@category),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

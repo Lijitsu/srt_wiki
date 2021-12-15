@@ -1,0 +1,8 @@
+<h1><%= @series.name %></h1>
+
+<ul>
+  <li><%= link_to "Edit", edit_admin_series_path(@series) %></li>
+  <li><%= link_to "Destroy", admin_series_url(@series),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

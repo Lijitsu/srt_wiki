@@ -21,11 +21,24 @@ class Admin::GamesController < Admin::BaseController
     end
   end
 
+  def create
+    @game = Game.new(game_params)
+    if @game.save 
+      redirect_to @game
+    else
+      render :new
+    end
+  end
+
   def destroy
     @game = Game.find(params[:id])
     @game.destroy
 
     redirect_to root_path
+  end
+  
+  def show
+    @game = Game.find (params[:id])
   end
 
   private

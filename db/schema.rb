@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_185702) do
+ActiveRecord::Schema.define(version: 2021_12_15_205122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_185702) do
     t.text "rules"
     t.text "overview"
     t.string "platform"
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_categories_on_game_id"
   end
 
   create_table "game_tricks", force: :cascade do |t|
@@ -32,6 +34,10 @@ ActiveRecord::Schema.define(version: 2021_12_15_185702) do
   create_table "games", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "platform"
+    t.text "overview"
+    t.string "release_date"
   end
 
   create_table "guides", force: :cascade do |t|
@@ -52,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_12_15_185702) do
   create_table "series", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
   create_table "skips", force: :cascade do |t|
@@ -81,4 +88,5 @@ ActiveRecord::Schema.define(version: 2021_12_15_185702) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
 
+  add_foreign_key "categories", "games"
 end

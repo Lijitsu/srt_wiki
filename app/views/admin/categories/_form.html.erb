@@ -3,5 +3,6 @@
   <%= f.input :platform %>
   <%= f.input :overview %>
   <%= f.input :rules %>
+  <%= f.input :game, collection: Game.all %>
   <%= f.submit %>
 <% end %>

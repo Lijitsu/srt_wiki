@@ -2,9 +2,13 @@
 #
 # Table name: games
 #
-#  id         :bigint           not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :bigint           not null, primary key
+#  name         :string
+#  overview     :text
+#  platform     :string
+#  release_date :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 require "test_helper"
 
