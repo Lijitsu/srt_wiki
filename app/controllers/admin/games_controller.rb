@@ -1,8 +1,8 @@
-class Admin::GamesController < BaseController
+class Admin::GamesController < Admin::BaseController
   def index
     @games = Game.all
   end
-  
+
   def new
     @game = Game.new
   end
@@ -14,7 +14,7 @@ class Admin::GamesController < BaseController
   def update
     @game = Game.find (params[:id])
 
-    if @game.update(article_params)
+    if @game.update(game_params)
       redirect_to @game
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::GamesController < BaseController
 
   private
 
-  def trick_params
+  def game_params
     params.require(:game).permit(:name, :platform, :release_date)
   end
 end

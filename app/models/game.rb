@@ -8,7 +8,10 @@
 #
 class Game < ApplicationRecord
   belongs_to :series
-  has_many :categories, :levels, :guides, :skips
+  has_many :categories
+  has_many :levels
+  has_many :guides
+  has_many :skips
   has_many :tricks, through: :game_tricks
 
   attr_accessor :name, :overview, :platform, :release_date, :box_art

@@ -7,7 +7,8 @@
 #  updated_at :datetime         not null
 #
 class Skip < ApplicationRecord
-  belongs_to :game, :level
+  belongs_to :game
+  belongs_to :level
 
   attr_accessor :name, :game_version, :discoverer, :description, :video, :platform
 

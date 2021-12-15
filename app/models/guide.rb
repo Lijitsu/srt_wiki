@@ -7,7 +7,8 @@
 #  updated_at :datetime         not null
 #
 class Guide < ApplicationRecord
-  belongs_to :game, :category
+  belongs_to :game
+  belongs_to :category
 
   attr_accessor :name, :revision, :game_version, :creator
 

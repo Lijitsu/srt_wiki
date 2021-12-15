@@ -1,7 +1,7 @@
 <h1>Series</h1>
 <%= link_to 'New Series', new_admin_series_path %>
 <ul>
-  <% @seriess.each do |series| %>
+  <% @series.each do |series| %>
     <li><%= link_to series.name, [:admin, series] %></li>
   <% end %>
 </ul>

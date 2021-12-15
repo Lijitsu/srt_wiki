@@ -1,8 +1,8 @@
-class Admin::LevelsController < BaseController
+class Admin::LevelsController < Admin::BaseController
   def index
     @levels = Level.all
   end
-  
+
   def new
     @level = Level.new
   end
@@ -14,7 +14,7 @@ class Admin::LevelsController < BaseController
   def update
     @level = Level.find (params[:id])
 
-    if @level.update(article_params)
+    if @level.update(level_params)
       redirect_to @level
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::LevelsController < BaseController
 
   private
 
-  def trick_params
+  def level_params
     params.require(:level).permit(:name, :description, :overhead)
   end
 end

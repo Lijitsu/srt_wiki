@@ -1,8 +1,8 @@
-class Admin::GuidesController < BaseController
+class Admin::GuidesController < Admin::BaseController
   def index
     @guides = Guide.all
   end
-  
+
   def new
     @guide = Guide.new
   end
@@ -14,7 +14,7 @@ class Admin::GuidesController < BaseController
   def update
     @guide = Guide.find (params[:id])
 
-    if @guide.update(article_params)
+    if @guide.update(guide_params)
       redirect_to @guide
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::GuidesController < BaseController
 
   private
 
-  def trick_params
-    params.require(:guide).permit(:name, :revision)
+  def guide_params
+    params.require(:guide).permit(:name, :revision, :category)
   end
 end

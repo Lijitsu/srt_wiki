@@ -1,8 +1,8 @@
-class Admin::ResourcesController < BaseController
+class Admin::ResourcesController < Admin::BaseController
   def index
     @resources = Resource.all
   end
-  
+
   def new
     @resource = Resource.new
   end
@@ -14,7 +14,7 @@ class Admin::ResourcesController < BaseController
   def update
     @resource = Resource.find (params[:id])
 
-    if @resource.update(article_params)
+    if @resource.update(resource_params)
       redirect_to @resource
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::ResourcesController < BaseController
 
   private
 
-  def trick_params
+  def resource_params
     params.require(:resource).permit(:name)
   end
 end

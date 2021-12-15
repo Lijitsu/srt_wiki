@@ -1,8 +1,8 @@
-class Admin::SkipsController < BaseController
+class Admin::SkipsController < Admin::BaseController
   def index
     @skips = Skip.all
   end
-  
+
   def new
     @skip = Skip.new
   end
@@ -14,7 +14,7 @@ class Admin::SkipsController < BaseController
   def update
     @skip = Skip.find (params[:id])
 
-    if @skip.update(article_params)
+    if @skip.update(skip_params)
       redirect_to @skip
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::SkipsController < BaseController
 
   private
 
-  def trick_params
+  def skip_params
     params.require(:skip).permit(:name, :discoverer, :description, :video)
   end
 end

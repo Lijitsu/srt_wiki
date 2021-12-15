@@ -1,8 +1,8 @@
-class Admin::TricksController < BaseController
+class Admin::TricksController < Admin::BaseController
   def index
     @tricks = Trick.all
   end
-  
+
   def new
     @trick = Trick.new
   end
@@ -14,7 +14,7 @@ class Admin::TricksController < BaseController
   def update
     @trick = Trick.find (params[:id])
 
-    if @trick.update(article_params)
+    if @trick.update(trick_params)
       redirect_to @trick
     else
       render :edit

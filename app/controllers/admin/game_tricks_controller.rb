@@ -1,4 +1,4 @@
-class Admin::GameTricksController < BaseController
+class Admin::GameTricksController < Admin::BaseController
   def new
     @game_trick = Game_Trick.new
   end
@@ -10,7 +10,7 @@ class Admin::GameTricksController < BaseController
   def update
     @game_trick = Game_Trick.find (params[:id])
 
-    if @game_trick.update(article_params)
+    if @game_trick.update(game_trick_params)
       redirect_to @game_trick
     else
       render :edit
@@ -26,7 +26,7 @@ class Admin::GameTricksController < BaseController
 
   private
 
-  def trick_params
+  def game_trick_params
     params.require(:game_trick).permit(:name, :discoverer, :description, :video)
   end
 end

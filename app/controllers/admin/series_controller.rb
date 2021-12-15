@@ -1,8 +1,8 @@
-class Admin::SeriesController < BaseController
+class Admin::SeriesController < Admin::BaseController
   def index
     @series = Series.all
   end
-  
+
   def new
     @series = Series.new
   end
@@ -14,7 +14,7 @@ class Admin::SeriesController < BaseController
   def update
     @series = Series.find (params[:id])
 
-    if @series.update(article_params)
+    if @series.update(series_params)
       redirect_to @series
     else
       render :edit
@@ -30,7 +30,7 @@ class Admin::SeriesController < BaseController
 
   private
 
-  def trick_params
-    params.require(:series).permit(:name)
+  def series_params
+    params.require(:series).permit(:name, :game)
   end
 end
