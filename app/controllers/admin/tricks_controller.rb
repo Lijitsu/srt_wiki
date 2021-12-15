@@ -1,4 +1,8 @@
 class Admin::TricksController < BaseController
+  def index
+    @tricks = Trick.all
+  end
+  
   def new
     @trick = Trick.new
   end

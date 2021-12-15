@@ -1,4 +1,8 @@
 class Admin::GuidesController < BaseController
+  def index
+    @guides = Guide.all
+  end
+  
   def new
     @guide = Guide.new
   end

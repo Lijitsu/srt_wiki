@@ -1,4 +1,8 @@
 class Admin::SeriesController < BaseController
+  def index
+    @series = Series.all
+  end
+  
   def new
     @series = Series.new
   end

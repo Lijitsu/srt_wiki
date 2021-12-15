@@ -1,4 +1,8 @@
 class Admin::GamesController < BaseController
+  def index
+    @games = Game.all
+  end
+  
   def new
     @game = Game.new
   end

@@ -1,4 +1,8 @@
 class Admin::LevelsController < BaseController
+  def index
+    @levels = Level.all
+  end
+  
   def new
     @level = Level.new
   end

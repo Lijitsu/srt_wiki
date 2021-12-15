@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light style="background-color: #2596be
+;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SRT SR Wiki</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Series', admin_series_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Games', admin_games_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Categories', admin_categories_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Guides', admin_guides_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Tricks', admin_tricks_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Skips', admin_skips_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Levels', admin_levels_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Resources', admin_resources_path, class: 'nav-link' %>
+        </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

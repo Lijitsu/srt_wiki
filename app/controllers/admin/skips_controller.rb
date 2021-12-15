@@ -1,4 +1,8 @@
 class Admin::SkipsController < BaseController
+  def index
+    @skips = Skip.all
+  end
+  
   def new
     @skip = Skip.new
   end

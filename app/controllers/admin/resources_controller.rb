@@ -1,4 +1,8 @@
 class Admin::ResourcesController < BaseController
+  def index
+    @resources = Resource.all
+  end
+  
   def new
     @resource = Resource.new
   end
