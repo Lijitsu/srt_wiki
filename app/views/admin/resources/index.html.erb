@@ -1,0 +1,7 @@
+<h1>Resources</h1>
+<%= link_to 'New Resource', new_admin_resource_path %>
+<ul>
+  <% @resources.each do |resource| %>
+    <li><%= link_to resource.name, [:admin, resource] %></li>
+  <% end %>
+</ul>
