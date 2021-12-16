@@ -1,0 +1,7 @@
+<h1>Levels</h1>
+<%= link_to 'New Level', new_admin_level_path %>
+<ul>
+  <% @levels.each do |level| %>
+    <li><%= link_to level.name, [:admin, level] %></li>
+  <% end %>
+</ul>

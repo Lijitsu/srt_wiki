@@ -25,7 +25,7 @@ class Admin::TricksController < Admin::BaseController
     @trick = Trick.find(params[:id])
     @trick.destroy
 
-    redirect_to root_path
+    redirect_to admin_tricks_path
   end
 
   private

@@ -1,9 +1,11 @@
 <h1><%= @category.name %></h1>
-<p> <%= @category.platform %>
-<%= @category.overview %>
-<%= @category.game %>
-<%= @category.rules %></p>
-
+<ul>
+  <li><strong>Game:</strong> <%= @category.game.name %></li>
+  <li><strong>Platform:</strong> <%= @category.platform %></li>
+  <li><strong>Overview:</strong> <%= @category.overview %></li>
+  <li><strong>Rules:</strong></li>
+  <li><%= @category.rules %></p></li>
+</ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_category_path(@category) %></li>
   <li><%= link_to "Destroy", admin_category_url(@category),

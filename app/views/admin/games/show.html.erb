@@ -1,8 +1,11 @@
 <h1><%= @game.name %></h1>
-<p> <%= @game.platform %>
-<%= @game.overview %>
-<%= @game.release_date %>
-<%= @game.series %></p>
+<ul>
+  <li><strong>Series:</strong> <%= @game.series.name %></li>
+  <li><strong>Release Date:</strong> <%= @game.release_date %></li>
+  <li><strong>Platform:</strong> <%= @game.platform %></li>
+  <li><strong>Overview:</strong></li>
+  <li><%= @game.overview %></li>
+</ul>
 
 <ul>
   <li><%= link_to "Edit", edit_admin_game_path(@game) %></li>

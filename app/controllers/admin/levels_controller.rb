@@ -25,7 +25,7 @@ class Admin::LevelsController < Admin::BaseController
     @level = Level.find(params[:id])
     @level.destroy
 
-    redirect_to root_path
+    redirect_to admin_levels_path
   end
 
   private

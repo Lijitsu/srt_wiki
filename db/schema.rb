@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_000319) do
+ActiveRecord::Schema.define(version: 2021_12_16_230145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,7 @@ ActiveRecord::Schema.define(version: 2021_12_16_000319) do
     t.text "overview"
     t.string "platform"
     t.bigint "game_id", null: false
-    t.bigint "series_id", null: false
     t.index ["game_id"], name: "index_categories_on_game_id"
-    t.index ["series_id"], name: "index_categories_on_series_id"
   end
 
   create_table "game_tricks", force: :cascade do |t|
@@ -40,11 +38,22 @@ ActiveRecord::Schema.define(version: 2021_12_16_000319) do
     t.string "platform"
     t.text "overview"
     t.string "release_date"
+    t.bigint "series_id", null: false
+    t.index ["series_id"], name: "index_games_on_series_id"
   end
 
   create_table "guides", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "revision"
+    t.string "game_version"
+    t.string "creator"
+    t.text "content"
+    t.bigint "game_id", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_guides_on_category_id"
+    t.index ["game_id"], name: "index_guides_on_game_id"
   end
 
   create_table "levels", force: :cascade do |t|
@@ -91,5 +100,7 @@ ActiveRecord::Schema.define(version: 2021_12_16_000319) do
   end
 
   add_foreign_key "categories", "games"
-  add_foreign_key "categories", "series"
+  add_foreign_key "games", "series"
+  add_foreign_key "guides", "categories"
+  add_foreign_key "guides", "games"
 end

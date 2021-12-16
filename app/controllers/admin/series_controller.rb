@@ -34,7 +34,7 @@ class Admin::SeriesController < Admin::BaseController
     @series = Series.find(params[:id])
     @series.destroy
 
-    redirect_to root_path
+    redirect_to admin_series_path
   end
 
   def show

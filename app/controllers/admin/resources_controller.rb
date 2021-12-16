@@ -25,7 +25,7 @@ class Admin::ResourcesController < Admin::BaseController
     @resource = Resource.find(params[:id])
     @resource.destroy
 
-    redirect_to root_path
+    redirect_to admin_resources_path
   end
 
   private

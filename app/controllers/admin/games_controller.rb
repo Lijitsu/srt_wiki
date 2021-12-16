@@ -24,7 +24,7 @@ class Admin::GamesController < Admin::BaseController
   def create
     @game = Game.new(game_params)
     if @game.save 
-      redirect_to @game
+      redirect_to [:admin, @game]
     else
       render :new
     end
@@ -34,7 +34,7 @@ class Admin::GamesController < Admin::BaseController
     @game = Game.find(params[:id])
     @game.destroy
 
-    redirect_to root_path
+    redirect_to admin_games_path
   end
   
   def show
@@ -44,6 +44,6 @@ class Admin::GamesController < Admin::BaseController
   private
 
   def game_params
-    params.require(:game).permit(:name, :platform, :release_date)
+    params.require(:game).permit(:name, :platform, :release_date, :series_id)
   end
 end

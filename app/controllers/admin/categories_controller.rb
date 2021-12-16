@@ -24,7 +24,7 @@ class Admin::CategoriesController < Admin::BaseController
   def create
     @category = Category.new(category_params)
     if @category.save 
-      redirect_to @category
+      redirect_to [:admin, @category]
     else
       render :new
     end
@@ -34,7 +34,7 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.find(params[:id])
     @category.destroy
 
-    redirect_to root_path
+    redirect_to admin_categories_path
   end
 
   def show
@@ -44,6 +44,6 @@ class Admin::CategoriesController < Admin::BaseController
   private
 
   def category_params
-    params.require(:category).permit(:name, :overview, :platform, :rules)
+    params.require(:category).permit(:name, :overview, :platform, :rules, :game_id)
   end
 end

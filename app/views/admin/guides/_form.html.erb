@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, guide] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :game_version %>
+  <%= f.input :revision %>
+  <%= f.input :creator %>
+  <%= f.association :game_id %>
+  <%= f.association :category_id %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>

@@ -7,5 +7,6 @@
 #  updated_at :datetime         not null
 #
 class GameTrick < ApplicationRecord
-  belongs_to :games, :tricks
+  belongs_to :games
+  belongs_to :tricks
 end

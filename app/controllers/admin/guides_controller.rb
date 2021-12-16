@@ -25,7 +25,7 @@ class Admin::GuidesController < Admin::BaseController
     @guide = Guide.find(params[:id])
     @guide.destroy
 
-    redirect_to root_path
+    redirect_to admin_guides_path
   end
 
   private

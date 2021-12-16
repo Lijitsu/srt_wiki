@@ -1,0 +1,16 @@
+<h1><%= @guide.name %></h1>
+<ul>
+  <li><strong>Game:</strong> <%= @guide.game %></li>
+  <li><strong>Category:</strong> <%= @guide.category %></li>
+  <li><strong>Game Version:</strong> <%= @guide.game_version %></li>
+  <li><strong>Revision:</strong> <%= @guide.revision %></li>
+  <li><strong>Creator:</strong> <%= @guide.creator %></li>
+  <li><strong>Guide:</strong></li>
+  <li><%= @guide.content %></p></li>
+</ul>
+<ul>
+  <li><%= link_to "Edit", edit_admin_guide_path(@guide) %></li>
+  <li><%= link_to "Destroy", admin_guide_url(@guide),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>
