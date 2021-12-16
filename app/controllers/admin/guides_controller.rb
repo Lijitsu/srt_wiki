@@ -21,6 +21,15 @@ class Admin::GuidesController < Admin::BaseController
     end
   end
 
+  def create
+    @guide = Guide.new(guide_params)
+    if @guide.save 
+      redirect_to [:admin, @guide]
+    else
+      render :new
+    end
+  end
+
   def destroy
     @guide = Guide.find(params[:id])
     @guide.destroy

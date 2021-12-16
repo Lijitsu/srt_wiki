@@ -30,6 +30,4 @@ class Guide < ApplicationRecord
   validates :name, presence: true
   validates :revision, presence: true
   validates :content, presence: true
-  validates :game_id, presence: true
-  validates :category_id, presence: true
 end
