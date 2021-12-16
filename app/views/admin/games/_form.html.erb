@@ -3,6 +3,6 @@
   <%= f.input :platform %>
   <%= f.input :overview %>
   <%= f.input :release_date %>
-  <%= f.input :series, collection: Series.all %>
+  <%= f.association :series %>
   <%= f.submit %>
 <% end %>
