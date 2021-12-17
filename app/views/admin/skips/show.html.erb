@@ -1,0 +1,16 @@
+<h1><%= @skip.name %></h1>
+<ul>
+  <li><strong>Discoverer:</strong> <%= @skip.discoverer %></li>
+  <li><strong>Game:</strong> <%= @skip.game.name %></li>
+  <li><strong>Platform:</strong> <%= @skip.platform %></li>
+  <li><strong>Game Version:</strong> <%= @skip.game_version %></li>
+  <li><strong>Level:</strong> <%= @skip.level.name %></li>
+  <li><strong>Description:</strong></li>
+  <li><%= @skip.description %></p></li>
+</ul>
+<ul>
+  <li><%= link_to "Edit", edit_admin_skip_path(@skip) %></li>
+  <li><%= link_to "Destroy", admin_skip_url(@skip),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

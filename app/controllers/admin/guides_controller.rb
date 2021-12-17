@@ -15,7 +15,7 @@ class Admin::GuidesController < Admin::BaseController
     @guide = Guide.find (params[:id])
 
     if @guide.update(guide_params)
-      redirect_to @guide
+      redirect_to [:admin, @guide]
     else
       render :edit
     end
@@ -37,9 +37,13 @@ class Admin::GuidesController < Admin::BaseController
     redirect_to admin_guides_path
   end
 
+  def show
+    @guide = Guide.find (params[:id])
+  end
+
   private
 
   def guide_params
-    params.require(:guide).permit(:name, :revision, :category)
+    params.require(:guide).permit(:name, :revision, :category_id, :game_id, :content, :creator, :game_version)
   end
 end

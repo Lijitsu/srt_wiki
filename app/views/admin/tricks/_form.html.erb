@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, trick] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :game_version %>
+  <%= f.input :discoverer %>
+  <%= f.input :description %>
+  <%= f.input :platform %>
+  <%= f.association :game %>
+  <%= f.submit %>
+<% end %>

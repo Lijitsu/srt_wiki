@@ -1,7 +1,7 @@
 <h1>Guides</h1>
-<%= link_to 'New Guide', new_admin_guide_path %>
 <ul>
   <% @guides.each do |guide| %>
     <li><%= link_to guide.name, [:admin, guide] %></li>
   <% end %>
 </ul>
+<%= link_to 'New Guide', new_admin_guide_path %>

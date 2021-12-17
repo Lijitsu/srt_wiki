@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, skip] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :discoverer %>
+  <%= f.input :platform %>
+  <%= f.input :game_version %>
+  <%= f.input :description %>
+  <%= f.association :game %>
+  <%= f.association :level %>
+  <%= f.submit %>
+<% end %>

@@ -44,6 +44,6 @@ class Admin::GamesController < Admin::BaseController
   private
 
   def game_params
-    params.require(:game).permit(:name, :platform, :release_date, :series_id)
+    params.require(:game).permit(:name, :platform, :release_date, :series_id, game_tricks_attributes: [:trick_id])
   end
 end

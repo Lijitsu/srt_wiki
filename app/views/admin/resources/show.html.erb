@@ -1,0 +1,11 @@
+<h1><%= @resource.name %></h1>
+<ul>
+  <li><strong>Description:</strong></li>
+  <li><%= @resource.description %></p></li>
+</ul>
+<ul>
+  <li><%= link_to "Edit", edit_admin_resource_path(@resource) %></li>
+  <li><%= link_to "Destroy", admin_resource_url(@resource),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

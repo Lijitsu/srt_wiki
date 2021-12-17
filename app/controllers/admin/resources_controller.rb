@@ -21,6 +21,15 @@ class Admin::ResourcesController < Admin::BaseController
     end
   end
 
+  def create
+    @resource = Resource.new(resource_params)
+    if @resource.save 
+      redirect_to [:admin, @resource]
+    else
+      render :new
+    end
+  end
+
   def destroy
     @resource = Resource.find(params[:id])
     @resource.destroy
@@ -28,9 +37,13 @@ class Admin::ResourcesController < Admin::BaseController
     redirect_to admin_resources_path
   end
 
+  def show
+    @resource = Resource.find (params[:id])
+  end
+
   private
 
   def resource_params
-    params.require(:resource).permit(:name)
+    params.require(:resource).permit(:name, :description)
   end
 end

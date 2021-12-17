@@ -2,17 +2,25 @@
 #
 # Table name: levels
 #
-#  id         :bigint           not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  description :text
+#  name        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  game_id     :bigint           not null
+#
+# Indexes
+#
+#  index_levels_on_game_id  (game_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (game_id => games.id)
 #
 class Level < ApplicationRecord
   belongs_to :game
   has_many :skips
 
-  attr_accessor :name, :overhead, :description
-
   validates :name, presence: true
   validates :description, presence: true
-  validates :overhead, presence: true
 end

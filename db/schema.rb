@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_230145) do
+ActiveRecord::Schema.define(version: 2021_12_17_185034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,10 @@ ActiveRecord::Schema.define(version: 2021_12_16_230145) do
   create_table "game_tricks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "game_id", null: false
+    t.bigint "trick_id", null: false
+    t.index ["game_id"], name: "index_game_tricks_on_game_id"
+    t.index ["trick_id"], name: "index_game_tricks_on_trick_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -59,11 +63,17 @@ ActiveRecord::Schema.define(version: 2021_12_16_230145) do
   create_table "levels", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.text "description"
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_levels_on_game_id"
   end
 
   create_table "resources", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.text "description"
   end
 
   create_table "series", force: :cascade do |t|
@@ -75,11 +85,25 @@ ActiveRecord::Schema.define(version: 2021_12_16_230145) do
   create_table "skips", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "game_id", null: false
+    t.bigint "level_id", null: false
+    t.string "name"
+    t.string "game_version"
+    t.string "discoverer"
+    t.text "description"
+    t.string "platform"
+    t.index ["game_id"], name: "index_skips_on_game_id"
+    t.index ["level_id"], name: "index_skips_on_level_id"
   end
 
   create_table "tricks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "game_version"
+    t.string "discoverer"
+    t.text "description"
+    t.string "platform"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,7 +124,12 @@ ActiveRecord::Schema.define(version: 2021_12_16_230145) do
   end
 
   add_foreign_key "categories", "games"
+  add_foreign_key "game_tricks", "games"
+  add_foreign_key "game_tricks", "tricks"
   add_foreign_key "games", "series"
   add_foreign_key "guides", "categories"
   add_foreign_key "guides", "games"
+  add_foreign_key "levels", "games"
+  add_foreign_key "skips", "games"
+  add_foreign_key "skips", "levels"
 end

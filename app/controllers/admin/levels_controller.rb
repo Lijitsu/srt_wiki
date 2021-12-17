@@ -21,6 +21,15 @@ class Admin::LevelsController < Admin::BaseController
     end
   end
 
+  def create
+    @level = Level.new(level_params)
+    if @level.save 
+      redirect_to [:admin, @level]
+    else
+      render :new
+    end
+  end
+
   def destroy
     @level = Level.find(params[:id])
     @level.destroy
@@ -28,9 +37,13 @@ class Admin::LevelsController < Admin::BaseController
     redirect_to admin_levels_path
   end
 
+  def show
+    @level = Level.find (params[:id])
+  end
+
   private
 
   def level_params
-    params.require(:level).permit(:name, :description, :overhead)
+    params.require(:level).permit(:name, :description, :game_id)
   end
 end

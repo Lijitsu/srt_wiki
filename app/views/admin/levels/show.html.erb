@@ -1,0 +1,12 @@
+<h1><%= @level.name %></h1>
+<ul>
+  <li><strong>Game:</strong> <%= @level.game.name %></li>
+  <li><strong>Description:</strong></li>
+  <li><%= @level.description %></li>
+</ul>
+<ul>
+  <li><%= link_to "Edit", edit_admin_level_path(@level) %></li>
+  <li><%= link_to "Destroy", admin_level_url(@level),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>

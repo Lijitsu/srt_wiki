@@ -21,6 +21,15 @@ class Admin::SkipsController < Admin::BaseController
     end
   end
 
+  def create
+    @skip = Skip.new(skip_params)
+    if @skip.save 
+      redirect_to [:admin, @skip]
+    else
+      render :new
+    end
+  end
+
   def destroy
     @skip = Skip.find(params[:id])
     @skip.destroy
@@ -28,9 +37,13 @@ class Admin::SkipsController < Admin::BaseController
     redirect_to admin_skips_path
   end
 
+  def show
+    @skip = Skip.find (params[:id])
+  end
+
   private
 
   def skip_params
-    params.require(:skip).permit(:name, :discoverer, :description, :video)
+    params.require(:skip).permit(:name, :discoverer, :description, :platform, :level_id, :game_id, :game_version)
   end
 end

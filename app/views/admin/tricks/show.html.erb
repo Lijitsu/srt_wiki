@@ -1,0 +1,14 @@
+<h1><%= @trick.name %></h1>
+<ul>
+  <li><strong>Game:</strong> <%= @trick.game.name %></li>
+  <li><strong>Platform:</strong> <%= @trick.platform %></li>
+  <li><strong>Overview:</strong> <%= @trick.overview %></li>
+  <li><strong>Rules:</strong></li>
+  <li><%= @trick.rules %></p></li>
+</ul>
+<ul>
+  <li><%= link_to "Edit", edit_admin_trick_path(@trick) %></li>
+  <li><%= link_to "Destroy", admin_trick_url(@trick),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></li>
+</ul>
