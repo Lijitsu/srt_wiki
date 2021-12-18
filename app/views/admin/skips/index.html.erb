@@ -1,7 +1,7 @@
 <h1>Skips</h1>
-<%= link_to 'New Skip', new_admin_skip_path %>
 <ul>
   <% @skips.each do |skip| %>
     <li><%= link_to skip.name, [:admin, skip] %></li>
   <% end %>
 </ul>
+<%= link_to 'New Skip', new_admin_skip_path %>
