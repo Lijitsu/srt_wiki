@@ -15,7 +15,7 @@ class Admin::ResourcesController < Admin::BaseController
     @resource = Resource.find (params[:id])
 
     if @resource.update(resource_params)
-      redirect_to @resource
+      redirect_to [:admin, @resource]
     else
       render :edit
     end

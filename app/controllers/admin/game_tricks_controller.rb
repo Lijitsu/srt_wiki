@@ -1,4 +1,8 @@
 class Admin::GameTricksController < Admin::BaseController
+  def index
+    @game_trick = Game_Trick.all
+  end
+
   def new
     @game_trick = Game_Trick.new
   end
@@ -24,9 +28,13 @@ class Admin::GameTricksController < Admin::BaseController
     redirect_to root_path
   end
 
+  def show
+    @game_trick = Game_Trick.find (params[:id])
+  end
+
   private
 
   def game_trick_params
-    params.require(:game_trick).permit(:name, :discoverer, :description, :video)
+    params.require(:game_trick).permit(:name, game_tricks_attributes: [:trick_id])
   end
 end

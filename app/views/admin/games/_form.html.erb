@@ -4,5 +4,11 @@
   <%= f.input :overview %>
   <%= f.input :release_date %>
   <%= f.association :series %>
+  <div>
+    <%= f.simple_fields_for :game_tricks do |game_trick| %>
+      <%= render 'game_trick_fields', f: game_trick %>
+    <% end %>
+  </div>
+  <%= link_to_add_association 'Add Trick', f, :game_tricks %>
   <%= f.submit %>
 <% end %>

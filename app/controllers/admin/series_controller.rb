@@ -15,7 +15,7 @@ class Admin::SeriesController < Admin::BaseController
     @series = Series.find (params[:id])
 
     if @series.update(series_params)
-      redirect_to @series
+      redirect_to [:admin, @series]
     else
       render :edit
     end

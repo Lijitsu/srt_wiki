@@ -15,7 +15,7 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.find (params[:id])
 
     if @category.update(category_params)
-      redirect_to @category
+      redirect_to [:admin, @category]
     else
       render :edit
     end

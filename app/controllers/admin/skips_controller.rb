@@ -15,7 +15,7 @@ class Admin::SkipsController < Admin::BaseController
     @skip = Skip.find (params[:id])
 
     if @skip.update(skip_params)
-      redirect_to @skip
+      redirect_to [:admin, @skip]
     else
       render :edit
     end

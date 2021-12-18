@@ -25,8 +25,8 @@ class Game < ApplicationRecord
   has_many :levels
   has_many :guides
   has_many :skips
-  has_many :tricks, through: :game_tricks
   has_many :game_tricks
+  has_many :tricks, through: :game_tricks
   accepts_nested_attributes_for :game_tricks, allow_destroy: true
 
   validates :name, presence: true

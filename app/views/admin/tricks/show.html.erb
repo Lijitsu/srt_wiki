@@ -1,10 +1,10 @@
 <h1><%= @trick.name %></h1>
 <ul>
-  <li><strong>Game:</strong> <%= @trick.game.name %></li>
+  <li><strong>Discoverer:</strong> <%= @trick.discoverer %></li>
+  <li><strong>Game Version:</strong> <%= @trick.game_version %></li>
   <li><strong>Platform:</strong> <%= @trick.platform %></li>
-  <li><strong>Overview:</strong> <%= @trick.overview %></li>
-  <li><strong>Rules:</strong></li>
-  <li><%= @trick.rules %></p></li>
+  <li><strong>Description:</strong></li>
+  <li><%= @trick.description %></p></li>
 </ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_trick_path(@trick) %></li>

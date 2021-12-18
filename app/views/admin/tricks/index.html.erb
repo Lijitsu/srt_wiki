@@ -1,7 +1,7 @@
 <h1>Tricks</h1>
-<%= link_to 'New Trick', new_admin_trick_path %>
 <ul>
   <% @tricks.each do |trick| %>
     <li><%= link_to trick.name, [:admin, trick] %></li>
   <% end %>
 </ul>
+<%= link_to 'New Trick', new_admin_trick_path %>

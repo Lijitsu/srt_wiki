@@ -15,7 +15,7 @@ class Admin::LevelsController < Admin::BaseController
     @level = Level.find (params[:id])
 
     if @level.update(level_params)
-      redirect_to @level
+      redirect_to [:admin, @level]
     else
       render :edit
     end

@@ -6,7 +6,12 @@
   <li><strong>Overview:</strong></li>
   <li><%= @game.overview %></li>
 </ul>
-
+<strong>Associated Tricks:</strong>
+<ul>
+    <% @game.tricks.each do |trick| %>
+      <li><%= link_to trick.name, [:admin, trick] %></li>
+    <% end %>
+</ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_game_path(@game) %></li>
   <li><%= link_to "Destroy", admin_game_url(@game),

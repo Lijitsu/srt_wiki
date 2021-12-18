@@ -19,6 +19,6 @@
 #  fk_rails_...  (trick_id => tricks.id)
 #
 class GameTrick < ApplicationRecord
-  belongs_to :games
-  belongs_to :tricks
+  belongs_to :game
+  belongs_to :trick
 end
