@@ -12,7 +12,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def update
-    @category = Category.find (params[:id])
+    @category = Category.find(params[:id])
 
     if @category.update(category_params)
       redirect_to [:admin, @category]
@@ -23,7 +23,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def create
     @category = Category.new(category_params)
-    if @category.save 
+    if @category.save
       redirect_to [:admin, @category]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @category = Category.find (params[:id])
+    @category = Category.find(params[:id])
   end
 
   private

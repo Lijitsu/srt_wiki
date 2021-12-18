@@ -12,7 +12,7 @@ class Admin::SeriesController < Admin::BaseController
   end
 
   def update
-    @series = Series.find (params[:id])
+    @series = Series.find(params[:id])
 
     if @series.update(series_params)
       redirect_to [:admin, @series]
@@ -23,7 +23,7 @@ class Admin::SeriesController < Admin::BaseController
 
   def create
     @series = Series.new(series_params)
-    if @series.save 
+    if @series.save
       redirect_to [:admin, @series]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::SeriesController < Admin::BaseController
   end
 
   def show
-    @series = Series.find (params[:id])
+    @series = Series.find(params[:id])
   end
 
   private

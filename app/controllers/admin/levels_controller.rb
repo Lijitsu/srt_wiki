@@ -12,7 +12,7 @@ class Admin::LevelsController < Admin::BaseController
   end
 
   def update
-    @level = Level.find (params[:id])
+    @level = Level.find(params[:id])
 
     if @level.update(level_params)
       redirect_to [:admin, @level]
@@ -23,7 +23,7 @@ class Admin::LevelsController < Admin::BaseController
 
   def create
     @level = Level.new(level_params)
-    if @level.save 
+    if @level.save
       redirect_to [:admin, @level]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::LevelsController < Admin::BaseController
   end
 
   def show
-    @level = Level.find (params[:id])
+    @level = Level.find(params[:id])
   end
 
   private

@@ -12,7 +12,7 @@ class Admin::TricksController < Admin::BaseController
   end
 
   def update
-    @trick = Trick.find (params[:id])
+    @trick = Trick.find(params[:id])
 
     if @trick.update(trick_params)
       redirect_to [:admin, @trick]
@@ -23,7 +23,7 @@ class Admin::TricksController < Admin::BaseController
 
   def create
     @trick = Trick.new(trick_params)
-    if @trick.save 
+    if @trick.save
       redirect_to [:admin, @trick]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::TricksController < Admin::BaseController
   end
 
   def show
-    @trick = Trick.find (params[:id])
+    @trick = Trick.find(params[:id])
   end
 
   private

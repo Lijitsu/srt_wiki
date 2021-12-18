@@ -12,7 +12,7 @@ class Admin::SkipsController < Admin::BaseController
   end
 
   def update
-    @skip = Skip.find (params[:id])
+    @skip = Skip.find(params[:id])
 
     if @skip.update(skip_params)
       redirect_to [:admin, @skip]
@@ -23,7 +23,7 @@ class Admin::SkipsController < Admin::BaseController
 
   def create
     @skip = Skip.new(skip_params)
-    if @skip.save 
+    if @skip.save
       redirect_to [:admin, @skip]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::SkipsController < Admin::BaseController
   end
 
   def show
-    @skip = Skip.find (params[:id])
+    @skip = Skip.find(params[:id])
   end
 
   private

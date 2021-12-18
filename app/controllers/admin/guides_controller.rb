@@ -12,7 +12,7 @@ class Admin::GuidesController < Admin::BaseController
   end
 
   def update
-    @guide = Guide.find (params[:id])
+    @guide = Guide.find(params[:id])
 
     if @guide.update(guide_params)
       redirect_to [:admin, @guide]
@@ -23,7 +23,7 @@ class Admin::GuidesController < Admin::BaseController
 
   def create
     @guide = Guide.new(guide_params)
-    if @guide.save 
+    if @guide.save
       redirect_to [:admin, @guide]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::GuidesController < Admin::BaseController
   end
 
   def show
-    @guide = Guide.find (params[:id])
+    @guide = Guide.find(params[:id])
   end
 
   private

@@ -12,7 +12,7 @@ class Admin::ResourcesController < Admin::BaseController
   end
 
   def update
-    @resource = Resource.find (params[:id])
+    @resource = Resource.find(params[:id])
 
     if @resource.update(resource_params)
       redirect_to [:admin, @resource]
@@ -23,7 +23,7 @@ class Admin::ResourcesController < Admin::BaseController
 
   def create
     @resource = Resource.new(resource_params)
-    if @resource.save 
+    if @resource.save
       redirect_to [:admin, @resource]
     else
       render :new
@@ -38,7 +38,7 @@ class Admin::ResourcesController < Admin::BaseController
   end
 
   def show
-    @resource = Resource.find (params[:id])
+    @resource = Resource.find(params[:id])
   end
 
   private

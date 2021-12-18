@@ -16,7 +16,7 @@ class Admin::GamesController < Admin::BaseController
   end
 
   def update
-    @game = Game.find (params[:id])
+    @game = Game.find(params[:id])
 
     if @game.update(game_params)
       redirect_to [:admin, @game]
@@ -27,7 +27,7 @@ class Admin::GamesController < Admin::BaseController
 
   def create
     @game = Game.new(game_params)
-    if @game.save 
+    if @game.save
       redirect_to [:admin, @game]
     else
       render :new
@@ -40,9 +40,9 @@ class Admin::GamesController < Admin::BaseController
 
     redirect_to admin_games_path
   end
-  
+
   def show
-    @game = Game.find (params[:id])
+    @game = Game.find(params[:id])
   end
 
   private
