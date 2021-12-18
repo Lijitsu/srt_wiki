@@ -9,6 +9,6 @@
       <%= render 'game_trick_fields', f: game_trick %>
     <% end %>
   </div>
-  <%= link_to_add_association 'Add Trick', f, :game_tricks %>
+  <div><%= link_to_add_association 'Add Trick', f, :game_tricks %></div>
   <%= f.submit %>
 <% end %>
