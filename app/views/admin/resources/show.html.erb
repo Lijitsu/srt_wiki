@@ -1,7 +1,8 @@
 <h1><%= @resource.name %></h1>
 <ul>
+  <li><strong>Link:</strong> <%= @resource.link %></li>
   <li><strong>Description:</strong></li>
-  <li><%= @resource.description %></p></li>
+  <li><%= @resource.description %></li>
 </ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_resource_path(@resource) %></li>

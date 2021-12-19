@@ -12,6 +12,12 @@
       <li><%= link_to trick.name, [:admin, trick] %></li>
     <% end %>
 </ul>
+<strong>Associated Categories:</strong>
+<ul>
+  <% @game.categories.each do |category| %>
+    <li><%= link_to category.name, [:admin, category] %></li>
+  <% end %>
+</ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_game_path(@game) %></li>
   <li><%= link_to "Destroy", admin_game_url(@game),

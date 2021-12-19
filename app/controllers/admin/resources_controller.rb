@@ -44,6 +44,6 @@ class Admin::ResourcesController < Admin::BaseController
   private
 
   def resource_params
-    params.require(:resource).permit(:name, :description)
+    params.require(:resource).permit(:name, :description, :link)
   end
 end

@@ -1,5 +1,12 @@
 <h1><%= @series.name %></h1>
 
+<h2>Associated Games:</h2>
+<ul>
+  <% @series.games.each do |game| %>
+    <li><%= link_to game.name, [:admin, game] %></li>
+  <% end %>
+</ul>
+
 <ul>
   <li><%= link_to "Edit", edit_admin_series_path(@series) %></li>
   <li><%= link_to "Destroy", admin_series_url(@series),
