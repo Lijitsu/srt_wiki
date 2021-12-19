@@ -1,0 +1,20 @@
+<h1><%= @game.name %></h1>
+<ul>
+  <li><strong>Series:</strong> <%= @game.series.name %></li>
+  <li><strong>Release Date:</strong> <%= @game.release_date %></li>
+  <li><strong>Platform:</strong> <%= @game.platform %></li>
+  <li><strong>Overview:</strong></li>
+  <li><%= @game.overview %></li>
+</ul>
+<strong>Associated Categories:</strong>
+<ul>
+  <% @game.categories.each do |category| %>
+    <li><%= link_to category.name %></li>
+  <% end %>
+</ul>
+<strong>Associated Tricks:</strong>
+<ul>
+  <% @game.tricks.each do |trick| %>
+    <li><%= link_to trick.name %></li>
+  <% end %>
+</ul>

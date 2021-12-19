@@ -4,6 +4,12 @@ class LevelsController < ApplicationController
   end
 
   def show
-    @level = Level.find (params[:id])
+    @level = Level.find(params[:id])
+  end
+
+  private
+
+  def level_params
+    params.require(:level).permit(:name, :description, :game_id)
   end
 end
