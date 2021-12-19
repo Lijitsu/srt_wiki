@@ -6,6 +6,12 @@
   <li><strong>Rules:</strong></li>
   <li><%= @category.rules %></li>
 </ul>
+<strong>Category Guides:</strong>
+<ul>
+  <% @category.guides.each do |guide| %>
+    <li><%= link_to guide.name, [:admin, guide] %></li>
+  <% end %>
+</ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_category_path(@category) %></li>
   <li><%= link_to "Destroy", admin_category_url(@category),

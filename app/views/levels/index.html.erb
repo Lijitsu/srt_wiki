@@ -1,6 +1,6 @@
 <h1>Levels</h1>
 <ul>
   <% @levels.each do |level| %>
-    <li><%= link_to level.name %></li>
+    <li><%= link_to level.name, level_path(level.id) %></li>
   <% end %>
 </ul>

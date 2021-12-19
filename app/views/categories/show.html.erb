@@ -6,3 +6,9 @@
   <li><strong>Rules:</strong></li>
   <li><%= @category.rules %></li>
 </ul>
+<strong>Category Guides:</strong>
+<ul>
+  <% @category.guides.each do |guide| %>
+    <li><%= link_to guide.name, guide_path(guide.id) %></li>
+  <% end %>
+</ul>

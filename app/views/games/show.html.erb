@@ -9,12 +9,12 @@
 <strong>Associated Categories:</strong>
 <ul>
   <% @game.categories.each do |category| %>
-    <li><%= link_to category.name %></li>
+    <li><%= link_to category.name, category_path(category.id) %></li>
   <% end %>
 </ul>
 <strong>Associated Tricks:</strong>
 <ul>
   <% @game.tricks.each do |trick| %>
-    <li><%= link_to trick.name %></li>
+    <li><%= link_to trick.name, trick_path(trick.id) %></li>
   <% end %>
 </ul>
