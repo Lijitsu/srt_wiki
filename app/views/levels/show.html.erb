@@ -2,5 +2,5 @@
 <ul>
   <li><strong>Game:</strong> <%= @level.game.name %></li>
   <li><strong>Description:</strong></li>
-  <li><%= @level.description %></li>
+  <li><%= markdown(@level.description) %></li>
 </ul>

@@ -4,7 +4,7 @@
   <li><strong>Game Version:</strong> <%= @trick.game_version %></li>
   <li><strong>Platform:</strong> <%= @trick.platform %></li>
   <li><strong>Description:</strong></li>
-  <li><%= @trick.description %></li>
+  <li><%= markdown(@trick.description) %></li>
 </ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_trick_path(@trick) %></li>

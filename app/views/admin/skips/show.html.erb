@@ -6,7 +6,7 @@
   <li><strong>Game Version:</strong> <%= @skip.game_version %></li>
   <li><strong>Level:</strong> <%= @skip.level.name %></li>
   <li><strong>Description:</strong></li>
-  <li><%= @skip.description %></li>
+  <li><%= markdown(@skip.description) %></li>
 </ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_skip_path(@skip) %></li>

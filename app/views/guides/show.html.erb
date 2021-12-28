@@ -6,5 +6,5 @@
   <li><strong>Revision:</strong> <%= @guide.revision %></li>
   <li><strong>Creator:</strong> <%= @guide.creator %></li>
   <li><strong>Guide:</strong></li>
-  <li><%= @guide.content %></li>
+  <li><%= markdown(@guide.content) %></li>
 </ul>
