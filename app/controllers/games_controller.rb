@@ -1,3 +1,4 @@
+# The public view controller for games. Doesn't require things like CRUD, just viewing.
 class GamesController < ApplicationController
   def index
     @games = Game.all

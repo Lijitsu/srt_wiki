@@ -1,3 +1,4 @@
+# The public view controller for series. Doesn't require things like CRUD, just viewing.
 class SeriesController < ApplicationController
   def index
     @series = Series.all

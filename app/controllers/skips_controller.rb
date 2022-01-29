@@ -1,3 +1,4 @@
+# The public view controller for skips. Doesn't require things like CRUD, just viewing.
 class SkipsController < ApplicationController
   def index
     @skips = Skip.all

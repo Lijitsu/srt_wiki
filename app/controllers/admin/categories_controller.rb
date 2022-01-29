@@ -1,6 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
   def index
-    @categories = Category.all
+    @categories = Category.all.includes(:game)
+    @games = Game.all
   end
 
   def new
@@ -45,5 +46,9 @@ class Admin::CategoriesController < Admin::BaseController
 
   def category_params
     params.require(:category).permit(:name, :overview, :platform, :rules, :game_id)
+  end
+
+  def game_params
+    params.require(:game).permit(:name, :platform, :release_date, :series_id, :overview, game_tricks_attributes: [:trick_id])
   end
 end

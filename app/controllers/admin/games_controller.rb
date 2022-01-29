@@ -1,6 +1,6 @@
 class Admin::GamesController < Admin::BaseController
   def index
-    @games = Game.all
+    @games = Game.all.includes(:category)
   end
 
   def trick_index

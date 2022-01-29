@@ -1,3 +1,4 @@
+# The public view controller for tricks. Doesn't require things like CRUD, just viewing.
 class TricksController < ApplicationController
   def index
     @tricks = Trick.all

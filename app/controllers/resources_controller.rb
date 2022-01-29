@@ -1,3 +1,4 @@
+# The public view controller for resources. Doesn't require things like CRUD, just viewing.
 class ResourcesController < ApplicationController
   def index
     @resources = Resource.all

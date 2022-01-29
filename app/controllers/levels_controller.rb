@@ -1,3 +1,4 @@
+# The public view controller for levels. Doesn't require things like CRUD, just viewing.
 class LevelsController < ApplicationController
   def index
     @levels = Level.all
