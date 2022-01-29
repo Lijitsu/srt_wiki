@@ -1,7 +1,12 @@
 <h1>Categories</h1>
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= link_to category.name, [:admin, category] %></li>
-  <% end %>
-</ul>
+<% @games.each do |game| %>
+ <div>
+  <h3><%= game.name %></h3>
+    <ul>
+      <% game.categories.each do |category| %>
+        <li><%= link_to category.name, [:admin, category] %></li>
+      <% end %>
+     </ul>
+  </div>
+<% end %>
 <%= link_to 'New Category', new_admin_category_path %>
