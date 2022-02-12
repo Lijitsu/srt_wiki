@@ -13,6 +13,7 @@
 #
 class Trick < ApplicationRecord
   has_many :games, through: :game_tricks
+  has_rich_text :description
 
   validates :name, presence: true
   validates :discoverer, presence: true

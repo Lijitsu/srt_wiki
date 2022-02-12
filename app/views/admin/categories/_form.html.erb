@@ -1,8 +1,14 @@
 <%= simple_form_for [:admin, category] do |f| %>
   <%= f.input :name %>
   <%= f.input :platform %>
-  <%= f.input :overview %>
-  <%= f.input :rules %>
+  <div class="field">
+    <%= f.label :overview %>
+    <%= f.rich_text_area :overview %>
+  </div>
+  <div class="field">
+    <%= f.label :rules %>
+    <%= f.rich_text_area :rules %>
+  </div>
   <%= f.association :game %>
   <%= f.submit %>
 <% end %>

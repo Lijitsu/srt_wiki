@@ -3,7 +3,10 @@
   <%= f.input :discoverer %>
   <%= f.input :platform %>
   <%= f.input :game_version %>
-  <%= f.input :description %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description %>
+  </div>
   <%= f.association :game %>
   <%= f.association :level %>
   <%= f.submit %>

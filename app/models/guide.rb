@@ -26,6 +26,7 @@
 class Guide < ApplicationRecord
   belongs_to :game
   belongs_to :category
+  has_rich_text :content
 
   validates :name, presence: true
   validates :revision, presence: true

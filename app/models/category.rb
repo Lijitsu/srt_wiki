@@ -22,6 +22,8 @@
 class Category < ApplicationRecord
   has_many :guides
   belongs_to :game
+  has_rich_text :rules
+  has_rich_text :overview
 
   validates :name, presence: true
   validates :rules, presence: true

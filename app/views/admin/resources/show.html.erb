@@ -2,7 +2,7 @@
 <ul>
   <li><strong>Link:</strong> <%= markdown(@resource.link) %></li>
   <li><strong>Description:</strong></li>
-  <li><%= markdown(@resource.description) %></li>
+  <li><%= @resource.description %></li>
 </ul>
 <ul>
   <li><%= link_to "Edit", edit_admin_resource_path(@resource) %></li>

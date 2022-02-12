@@ -1,7 +1,10 @@
 <%= simple_form_for [:admin, game] do |f| %>
   <%= f.input :name %>
   <%= f.input :platform %>
-  <%= f.input :overview %>
+  <div class="field">
+    <%= f.label :overview %>
+    <%= f.rich_text_area :overview %>
+  </div>
   <%= f.input :release_date %>
   <%= f.association :series %>
   <div>

@@ -5,6 +5,9 @@
   <%= f.input :creator %>
   <%= f.association :game %>
   <%= f.association :category %>
-  <%= f.input :content %>
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.rich_text_area :content %>
+  </div>
   <%= f.submit %>
 <% end %>

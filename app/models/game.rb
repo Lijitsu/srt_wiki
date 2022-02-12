@@ -28,6 +28,7 @@ class Game < ApplicationRecord
   has_many :game_tricks
   has_many :tricks, through: :game_tricks
   accepts_nested_attributes_for :game_tricks, allow_destroy: true
+  has_rich_text :overview
 
   validates :name, presence: true
   validates :platform, presence: true

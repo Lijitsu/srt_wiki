@@ -1,6 +1,9 @@
 <%= simple_form_for [:admin, level] do |f| %>
   <%= f.input :name %>
-  <%= f.input :description %>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.rich_text_area :description %>
+  </div>
   <%= f.association :game %>
   <%= f.submit %>
 <% end %>

@@ -20,6 +20,7 @@
 class Level < ApplicationRecord
   belongs_to :game
   has_many :skips
+  has_rich_text :description
 
   validates :name, presence: true
   validates :description, presence: true

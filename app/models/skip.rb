@@ -26,6 +26,7 @@
 class Skip < ApplicationRecord
   belongs_to :game
   belongs_to :level
+  has_rich_text :description
 
   validates :name, presence: true
   validates :discoverer, presence: true

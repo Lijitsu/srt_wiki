@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #
 class Resource < ApplicationRecord
+  has_rich_text :description
 
   validates :name, presence: true
 end

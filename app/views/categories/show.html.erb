@@ -2,9 +2,9 @@
 <ul>
   <li><strong>Game:</strong> <%= @category.game.name %></li>
   <li><strong>Platform:</strong> <%= @category.platform %></li>
-  <li><strong>Overview:</strong> <%= markdown(@category.overview) %></li>
+  <li><strong>Overview:</strong> <%= @category.overview %></li>
   <li><strong>Rules:</strong></li>
-  <li><%= markdown(@category.rules) %></li>
+  <li><%= @category.rules %></li>
 </ul>
 <strong>Category Guides:</strong>
 <ul>
