@@ -57,8 +57,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'cocoon'
+gem 'redcarpet'
 gem 'reek', '~> 6.0'
 gem 'rubocop', '~> 1.23'
 gem 'simple_form'
-gem 'sorcery'
-gem 'redcarpet'
